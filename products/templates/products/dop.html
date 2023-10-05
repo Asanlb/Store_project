@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+        <select id="fruit-select">
+    {% for fruit in fruits %}
+        <option value="{{ fruit }}">{{ fruit }}</option>
+    {% endfor %}
+    </select>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var selectedValue = $('#fruit-select option:selected').val();
+        $('#fruit-select option[value="' + selectedValue + '"]').prependTo('#fruit-select');
+    });
+    </script>
+
+    </select>
+</body>
+</html>
